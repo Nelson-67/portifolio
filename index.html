@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nelson Cechin | Desenvolvedor Full Stack</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Estilos CSS Personalizados -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho / Navegação -->
+    <header class="cabecalho">
+        <div class="container nav-container">
+            <a href="#" class="logo">Nelson<span>.dev</span></a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#habilidades" class="nav-link">Habilidades</a>
+                <a href="#educacao" class="nav-link">Educação</a>
+                <a href="#projetos" class="nav-link">Projetos</a>
+                <a href="#repositorios" class="nav-link">Repositórios</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </nav>
+
+            <div class="acoes-header">
+                <!-- Botão Alternar Tema (Dark/Light) -->
+                <button id="botao-tema" class="botao-icone" aria-label="Alternar Tema">
+                    <i class="bi bi-sun-fill" id="icone-sol"></i>
+                    <i class="bi bi-moon-fill" id="icone-lua"></i>
+                </button>
+
+                <!-- Botão Menu Hambúrguer (Mobile) -->
+                <button id="botao-menu" class="botao-hamburguer" aria-label="Abrir Menu">
+                    <i class="bi bi-list" id="icone-menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção Hero (Apresentação Principal) -->
+        <section class="hero" id="inicio">
+            <div class="container hero-container">
+                <div class="hero-conteudo">
+                    <span class="badge-ola">Olá, mundo! 👋 Meu nome é</span>
+                    <h1 class="titulo-principal">Nelson Cechin</h1>
+                    <h2 class="subtitulo-principal">Eu sou <span class="maquina-escrever" id="elemento-maquina"></span></h2>
+                    <p class="hero-descricao">
+                        Sou estudante do 1º ano do Ensino Médio Técnico em Informática para Internet pela SESC Escola, em parceria com o SENAC. Focado em criar experiências web modernas e funcionais.
+                    </p>
+                    <div class="hero-botoes">
+                        <a href="curriculo.pdf" download="curriculo-nelson-cechin.pdf" class="botao botao-primario">
+                            <i class="bi bi-file-earmark-arrow-down-fill"></i> Baixar meu CV
+                        </a>
+                        <a href="#contato" class="botao botao-secundario">
+                            <i class="bi bi-chat-heart-fill"></i> Vamos Conversar?
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sobre Mim -->
+        <section class="secao sobre" id="sobre">
+            <div class="container">
+                <div class="secao-cabecalho">
+                    <h2 class="titulo-secao">Sobre Mim</h2>
+                    <p class="subtitulo-secao">Conheça um pouco da minha trajetória e objetivos</p>
+                </div>
+                <div class="sobre-grid">
+                    <div class="sobre-card glassmorphism">
+                        <div class="sobre-icone">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+                        <h3>Minha Jornada</h3>
+                        <p>
+                            Iniciei minha trilha de aprendizado me especializando em desenvolvimento <strong>Front-end</strong>. Pratico esportes e busco sempre manter o equilíbrio entre mente e corpo para resolver problemas com criatividade.
+                        </p>
+                    </div>
+                    <div class="sobre-card glassmorphism">
+                        <div class="sobre-icone">
+                            <i class="bi bi-layers-fill"></i>
+                        </div>
+                        <h3>Visão Full Stack</h3>
+                        <p>
+                            Nos próximos anos, minha formação se expandirá para o <strong>Back-end</strong> (2º ano) e desenvolvimento <strong>Mobile</strong> (3º ano), construindo uma base sólida para me tornar um Desenvolvedor Full Stack completo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Habilidades -->
+        <section class="secao habilidades" id="habilidades">
+            <div class="container">
+                <div class="secao-cabecalho">
+                    <h2 class="titulo-secao">Hard Skills</h2>
+                    <p class="subtitulo-secao">Tecnologias e ferramentas que utilizo no dia a dia</p>
+                </div>
+                <div class="habilidades-grid">
+                    <div class="skill-card">
+                        <i class="bi bi-filetype-html" style="color: #E34F26;"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class="bi bi-filetype-css" style="color: #1572B6;"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class="bi bi-filetype-js" style="color: #F7DF1E;"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class="bi bi-cpu" style="color: #0D6EFD;"></i>
+                        <span>Lógica de Programação</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class="bi bi-diagram-3" style="color: #198754;"></i>
+                        <span>Algoritmos</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class="bi bi-git" style="color: #F05032;"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="skill-card">
+                        <i class="bi bi-github" style="color: var(--cor-texto);"></i>
+                        <span>GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Educação -->
+        <section class="secao educacao" id="educacao">
+            <div class="container">
+                <div class="secao-cabecalho">
+                    <h2 class="titulo-secao">Formação Acadêmica</h2>
+                    <p class="subtitulo-secao">Minha base de ensino técnico e trilha de especialização</p>
+                </div>
+                
+                <div class="card-educacao glassmorphism">
+                    <div class="educacao-topo">
+                        <div class="educacao-icone">
+                            <i class="bi bi-mortarboard-fill"></i>
+                        </div>
+                        <div>
+                            <h3>Ensino Médio Técnico em Informática para Internet</h3>
+                            <span class="instituicao">SESC ESCOLA / SENAC</span>
+                            <span class="conclusao"><i class="bi bi-calendar-check"></i> Conclusão prevista para 2026</span>
+                        </div>
+                    </div>
+                    
+                    <div class="trilha-tecnica">
+                        <h4>Trilha de Aprendizado:</h4>
+                        <div class="trilha-grid">
+                            <div class="trilha-item ativo">
+                                <i class="bi bi-laptop"></i>
+                                <strong>Módulo 1</strong>
+                                <span>Front-end (Foco Atual)</span>
+                            </div>
+                            <div class="trilha-item">
+                                <i class="bi bi-server"></i>
+                                <strong>Módulo 2</strong>
+                                <span>Back-end (2º Ano)</span>
+                            </div>
+                            <div class="trilha-item">
+                                <i class="bi bi-phone"></i>
+                                <strong>Módulo 3</strong>
+                                <span>Mobile (3º Ano)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Portfólio e Estudos -->
+        <section class="secao portifolio" id="projetos">
+            <div class="container">
+                <div class="secao-cabecalho">
+                    <h2 class="titulo-secao">Portfólio e Estudos</h2>
+                    <p class="subtitulo-secao">Meus principais projetos e repositórios de sala de aula</p>
+                </div>
+
+                <!-- Subseção A: Projetos de Destaque -->
+                <h3 class="subsecao-titulo">Projetos de Destaque</h3>
+                <div class="projetos-grid">
+                    <!-- Projeto 1 -->
+                    <div class="projeto-card">
+                        <div class="projeto-imagem">
+                            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80" alt="Compasso Musical" loading="lazy">
+                        </div>
+                        <div class="projeto-info">
+                            <h4>compasso-musical</h4>
+                            <p>Um site para ajudar iniciantes na carreira da música com dicas e ferramentas essenciais.</p>
+                            <div class="projeto-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                            </div>
+                            <div class="projeto-botoes">
+                                <a href="https://nelson-67.github.io/compasso-musical/" target="_blank" class="botao botao-pequeno botao-primario">
+                                    <i class="bi bi-eye-fill"></i> Ver Site
+                                </a>
+                                <a href="https://github.com/Nelson-67/compasso-musical" target="_blank" class="botao botao-pequeno botao-secundario">
+                                    <i class="bi bi-github"></i> Repositório
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 2 -->
+                    <div class="projeto-card">
+                        <div class="projeto-imagem">
+                            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80" alt="Projeto Robomaker" loading="lazy">
+                        </div>
+                        <div class="projeto-info">
+                            <h4>projeto-robomaker</h4>
+                            <p>Um site de compras e montagens de peças tecnológicas e robóticas para entusiastas.</p>
+                            <div class="projeto-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                            </div>
+                            <div class="projeto-botoes">
+                                <span class="badge-em-breve">Em breve</span>
+                                <a href="https://github.com/Nelson-67/projeto-robomaker" target="_blank" class="botao botao-pequeno botao-secundario">
+                                    <i class="bi bi-github"></i> Repositório
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subseção B: Repositórios de Estudo -->
+                <h3 class="subsecao-titulo repos-titulo">Repositórios de Estudo</h3>
+                <div class="repositorios-grid">
+                    <a href="https://github.com/Nelson-67/html" target="_blank" class="repo-card">
+                        <i class="bi bi-folder2-open"></i>
+                        <div>
+                            <h5>Trilha de HTML e CSS</h5>
+                            <span>Anotações e exercícios práticos</span>
+                        </div>
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+
+                    <a href="https://github.com/Nelson-67/javascript" target="_blank" class="repo-card">
+                        <i class="bi bi-folder2-open"></i>
+                        <div>
+                            <h5>Trilha de JavaScript Vanilla</h5>
+                            <span>Scripts, lógica e manipulação DOM</span>
+                        </div>
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+
+                    <a href="https://github.com/Nelson-67/algoritmos-1" target="_blank" class="repo-card">
+                        <i class="bi bi-folder2-open"></i>
+                        <div>
+                            <h5>Lógica e Algoritmos</h5>
+                            <span>Exercícios resolvidos em Portugol</span>
+                        </div>
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Contato / Redes Sociais -->
+        <section class="secao contato" id="contato">
+            <div class="container">
+                <div class="secao-cabecalho">
+                    <h2 class="titulo-secao">Vamos Conversar?</h2>
+                    <p class="subtitulo-secao">Conecte-se comigo através das minhas redes sociais</p>
+                </div>
+
+                <div class="contato-grid">
+                    <!-- E-mail -->
+                    <a href="mailto:tinelson1727@gmail.com" class="contato-card card-email" target="_blank">
+                        <div class="contato-icone">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <span>E-mail</span>
+                        <small>tinelson1727@gmail.com</small>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/Nelson-67" class="contato-card card-github" target="_blank">
+                        <div class="contato-icone">
+                            <i class="bi bi-github"></i>
+                        </div>
+                        <span>GitHub</span>
+                        <small>@Nelson-67</small>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/5565993434263" class="contato-card card-whatsapp" target="_blank">
+                        <div class="contato-icone">
+                            <i class="bi bi-whatsapp"></i>
+                        </div>
+                        <span>WhatsApp</span>
+                        <small>+55 65 99343-4263</small>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/n.cechinz" class="contato-card card-instagram" target="_blank">
+                        <div class="contato-icone">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <span>Instagram</span>
+                        <small>@n.cechinz</small>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+            <p>Copyright &copy; <span id="ano-atual">2026</span> Nelson Cechin. Todos os direitos reservados.</p>
+            <p class="desenvolvido-por">Desenvolvido com <i class="bi bi-heart-fill cor-coracao"></i> por Nelson Cechin</p>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="botao-topo" class="botao-topo" aria-label="Voltar ao Topo">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Script JS -->
+    <script src="script.js"></script>
+</body>
+</html>

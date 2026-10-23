@@ -1,0 +1,806 @@
+/* ==========================================
+   VARIÁVEIS DE CORES E CONFIGURAÇÕES GLOBAIS
+   ================================---------- */
+:root {
+    --transicao: all 0.3s ease-in-out;
+}
+
+/* Tema Escuro (Padrão) */
+[data-tema="dark"] {
+    --cor-fundo: #121212;
+    --cor-fundo-secundario: #1e1e1e;
+    --cor-fundo-card: rgba(30, 30, 30, 0.7);
+    --cor-texto: #E0E0E0;
+    --cor-texto-muted: #A0A0A0;
+    --cor-primaria: #BB86FC;
+    --cor-primaria-hover: #9955ef;
+    --cor-borda: rgba(255, 255, 255, 0.1);
+    --sombra-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Tema Claro */
+[data-tema="light"] {
+    --cor-fundo: #F8F9FA;
+    --cor-fundo-secundario: #FFFFFF;
+    --cor-fundo-card: rgba(255, 255, 255, 0.8);
+    --cor-texto: #212529;
+    --cor-texto-muted: #6C757D;
+    --cor-primaria: #0D6EFD;
+    --cor-primaria-hover: #0b5ed7;
+    --cor-borda: rgba(0, 0, 0, 0.1);
+    --sombra-card: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Reset Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    transition: var(--transicao);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--cor-fundo);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--cor-primaria);
+    border-radius: 5px;
+}
+
+/* ==========================================
+   CABEÇALHO / NAVEGAÇÃO
+   ================================---------- */
+.cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-fundo-card);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--cor-borda);
+    z-index: 1000;
+    transition: var(--transicao);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-texto);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--cor-primaria);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--cor-texto-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transicao);
+}
+
+.nav-link:hover {
+    color: var(--cor-primaria);
+}
+
+.acoes-header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.botao-icone {
+    background: none;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: var(--transicao);
+}
+
+.botao-icone:hover {
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+}
+
+/* Controle de Ícones de Tema */
+[data-tema="dark"] #icone-sol { display: block; }
+[data-tema="dark"] #icone-lua { display: none; }
+[data-tema="light"] #icone-sol { display: none; }
+[data-tema="light"] #icone-lua { display: block; }
+
+.botao-hamburguer {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--cor-texto);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* ==========================================
+   SEÇÃO HERO
+   ================================---------- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 75px;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.badge-ola {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--cor-fundo-secundario);
+    border: 1px solid var(--cor-borda);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: var(--cor-primaria);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.titulo-principal {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo-principal {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 600;
+    color: var(--cor-texto-muted);
+    margin-bottom: 1.5rem;
+}
+
+.maquina-escrever {
+    color: var(--cor-primaria);
+    border-right: 3px solid var(--cor-primaria);
+    padding-right: 4px;
+    animation: piscar 0.75s infinite;
+}
+
+@keyframes piscar {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--cor-primaria); }
+}
+
+.hero-descricao {
+    max-width: 650px;
+    font-size: 1.1rem;
+    color: var(--cor-texto-muted);
+    margin-bottom: 2rem;
+}
+
+.hero-botoes {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Botões Globais */
+.botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transicao);
+    cursor: pointer;
+    border: none;
+}
+
+.botao-primario {
+    background-color: var(--cor-primaria);
+    color: #121212;
+}
+[data-tema="light"] .botao-primario {
+    color: #FFFFFF;
+}
+
+.botao-primario:hover {
+    background-color: var(--cor-primaria-hover);
+    transform: translateY(-3px);
+}
+
+.botao-secundario {
+    background-color: transparent;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto);
+}
+
+.botao-secundario:hover {
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+    transform: translateY(-3px);
+}
+
+.botao-pequeno {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   ESTILOS GERAIS DE SEÇÕES
+   ================================---------- */
+.secao {
+    padding: 6rem 0;
+}
+
+.secao-cabecalho {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.titulo-secao {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo-secao {
+    color: var(--cor-texto-muted);
+    font-size: 1rem;
+}
+
+.glassmorphism {
+    background: var(--cor-fundo-card);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--cor-borda);
+    box-shadow: var(--sombra-card);
+    border-radius: 16px;
+}
+
+/* ==========================================
+   SEÇÃO SOBRE
+   ================================---------- */
+.sobre-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.sobre-card {
+    padding: 2.5rem;
+    transition: var(--transicao);
+}
+
+.sobre-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-primaria);
+}
+
+.sobre-icone {
+    font-size: 2.5rem;
+    color: var(--cor-primaria);
+    margin-bottom: 1.2rem;
+}
+
+.sobre-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.sobre-card p {
+    color: var(--cor-texto-muted);
+}
+
+/* ==========================================
+   SEÇÃO HABILIDADES
+   ================================---------- */
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background-color: var(--cor-fundo-secundario);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    transition: var(--transicao);
+}
+
+.skill-card i {
+    font-size: 2.5rem;
+}
+
+.skill-card span {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-primaria);
+    box-shadow: var(--sombra-card);
+}
+
+/* ==========================================
+   SEÇÃO EDUCAÇÃO
+   ================================---------- */
+.card-educacao {
+    padding: 2.5rem;
+}
+
+.educacao-topo {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.educacao-icone {
+    font-size: 2.5rem;
+    color: var(--cor-primaria);
+    background-color: var(--cor-fundo-secundario);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--cor-borda);
+}
+
+.educacao-topo h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+
+.instituicao {
+    display: block;
+    color: var(--cor-primaria);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.conclusao {
+    font-size: 0.9rem;
+    color: var(--cor-texto-muted);
+}
+
+.trilha-tecnica h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+}
+
+.trilha-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.trilha-item {
+    background-color: var(--cor-fundo-secundario);
+    border: 1px solid var(--cor-borda);
+    padding: 1.2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    transition: var(--transicao);
+}
+
+.trilha-item i {
+    font-size: 1.5rem;
+    color: var(--cor-texto-muted);
+    margin-bottom: 0.2rem;
+}
+
+.trilha-item.ativo {
+    border-color: var(--cor-primaria);
+    background: linear-gradient(135deg, var(--cor-fundo-secundario), rgba(187, 134, 252, 0.05));
+}
+
+.trilha-item.ativo i {
+    color: var(--cor-primaria);
+}
+
+.trilha-item span {
+    font-size: 0.85rem;
+    color: var(--cor-texto-muted);
+}
+
+/* ==========================================
+   SEÇÃO PORTFÓLIO E ESTUDOS
+   ================================---------- */
+.subsecao-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.repos-titulo {
+    margin-top: 3.5rem;
+}
+
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.projeto-card {
+    background-color: var(--cor-fundo-secundario);
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: var(--transicao);
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--cor-primaria);
+    box-shadow: var(--sombra-card);
+}
+
+.projeto-imagem {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.projeto-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.projeto-card:hover .projeto-imagem img {
+    transform: scale(1.05);
+}
+
+.projeto-info {
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.projeto-info h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.8rem;
+}
+
+.projeto-info p {
+    color: var(--cor-texto-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+    flex-grow: 1;
+}
+
+.projeto-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.projeto-tags span {
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.projeto-botoes {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.badge-em-breve {
+    font-size: 0.85rem;
+    color: var(--cor-texto-muted);
+    font-style: italic;
+    background: var(--cor-fundo);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid var(--cor-borda);
+}
+
+/* Repositórios Grid */
+.repositorios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.2rem;
+}
+
+.repo-card {
+    background-color: var(--cor-fundo-secundario);
+    border: 1px solid var(--cor-borda);
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    text-decoration: none;
+    color: var(--cor-texto);
+    transition: var(--transicao);
+}
+
+.repo-card > i:first-child {
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+}
+
+.repo-card div {
+    flex-grow: 1;
+}
+
+.repo-card h5 {
+    font-size: 1rem;
+    margin-bottom: 0.1rem;
+}
+
+.repo-card span {
+    font-size: 0.85rem;
+    color: var(--cor-texto-muted);
+}
+
+.repo-card > i:last-child {
+    color: var(--cor-texto-muted);
+    transition: var(--transicao);
+}
+
+.repo-card:hover {
+    border-color: var(--cor-primaria);
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-card);
+}
+
+.repo-card:hover > i:last-child {
+    color: var(--cor-primaria);
+    transform: translate(3px, -3px);
+}
+
+/* ==========================================
+   SEÇÃO CONTATO
+   ================================---------- */
+.contato-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.contato-card {
+    background-color: var(--cor-fundo-secundario);
+    border: 1px solid var(--cor-borda);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    transition: var(--transicao);
+}
+
+.contato-icone {
+    width: 60px;
+    height: 60px;
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+    transition: var(--transicao);
+}
+
+.contato-card span {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.contato-card small {
+    color: var(--cor-texto-muted);
+    font-size: 0.9rem;
+}
+
+/* Hovers Personalizados por Rede Social */
+.card-whatsapp:hover {
+    border-color: #25D366;
+    background: rgba(37, 211, 102, 0.05);
+}
+.card-whatsapp:hover .contato-icone {
+    background-color: #25D366;
+    color: #FFF;
+}
+
+.card-github:hover {
+    border-color: #333;
+    background: rgba(255, 255, 255, 0.03);
+}
+.card-github:hover .contato-icone {
+    background-color: #333;
+    color: #FFF;
+}
+
+.card-instagram:hover {
+    border-color: #E4405F;
+    background: rgba(228, 64, 95, 0.05);
+}
+.card-instagram:hover .contato-icone {
+    background-color: #E4405F;
+    color: #FFF;
+}
+
+.card-email:hover {
+    border-color: #EA4335;
+    background: rgba(234, 67, 53, 0.05);
+}
+.card-email:hover .contato-icone {
+    background-color: #EA4335;
+    color: #FFF;
+}
+
+.contato-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-card);
+}
+
+/* ==========================================
+   RODAPÉ E BOTÃO TOPO
+   ================================---------- */
+.rodape {
+    background-color: var(--cor-fundo-secundario);
+    border-top: 1px solid var(--cor-borda);
+    padding: 2.5rem 0;
+    text-align: center;
+}
+
+.rodape-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    color: var(--cor-texto-muted);
+    font-size: 0.95rem;
+}
+
+.cor-coracao {
+    color: #ff4d4d;
+}
+
+.botao-topo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--cor-primaria);
+    color: #121212;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transicao);
+    z-index: 999;
+}
+[data-tema="light"] .botao-topo {
+    color: #FFFFFF;
+}
+
+.botao-topo.visivel {
+    opacity: 1;
+    visibility: visible;
+}
+
+.botao-topo:hover {
+    transform: translateY(-5px);
+}
+
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVIDADE)
+   ================================---------- */
+@media (max-width: 768px) {
+    .botao-hamburguer {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 75px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 75px);
+        background-color: var(--cor-fundo);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: 0.4s ease-in-out;
+        border-right: 1px solid var(--cor-borda);
+    }
+
+    .nav-menu.ativo {
+        left: 0;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+    }
+
+    .hero {
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-botoes {
+        justify-content: center;
+    }
+
+    .hero-descricao {
+        margin: 0 auto 2rem auto;
+    }
+
+    .educacao-topo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
